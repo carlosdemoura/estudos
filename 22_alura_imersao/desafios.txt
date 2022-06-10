@@ -1,0 +1,24 @@
+
+Aula 1
+1. Realizar a média da metragem para cara um dos bairros (Paulo)
+2. 2 formas de selecionar os dados por bairro (consultar os métodos na documentação do pandas) (Thiago)
+3. Explorar alguns gráficos na documentação e aplicar nas demais colunas do DF, tentar colocar alguma conclusão (Thiago)
+4. Pegar outros estatísticas dos dados, média, mediana, mim, max (Vivi)
+5. Descobrir quais são os bairros que não tem nome de Rua. (Vivi)
+
+
+Aula 2
+Criar uma escala de valores em milhões
+Deixar o gráfico do histograma de valores legível (alterar labels, cores, título, escala)
+Preço do metro quadrado por bairro e plotar em um gráfico ideal
+Explorar as bibliotecas de visualizações e colocar as suas conclusão
+Pesquisar um visualização para analisar os quartis, mediana e outliers
+
+
+Aula 3
+Tentar vincular dados do IBGE com os dados de imóveis.
+Tratar os outliers e comparar com os resultados.
+Agrupar por mais de uma categoria e realizar as análises.
+Organize o colab para deixar com cara de projeto.
+
+

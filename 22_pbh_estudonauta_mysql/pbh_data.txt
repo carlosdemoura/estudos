@@ -1,0 +1,135 @@
+
+7.3 - Funções de Data
+
+
+O MySQL disponibiliza diversas funções para trabalhar com datas sendo que todas facilitam cálculos e até mesmo conversões entre idiomas.  Neste curso vamos apresentar algumas delas:
+
+Data Atual (CURDATE())
+
+É comum precisarmos obter a data atual para trabalharmos com relatórios ou realização de cálculos entre datas. Para isto temos a função CURDATE do MySQL que irá retornar a data atual no padrão americano (2020-01-01). 
+
+Caso você precise realizar calculo também com a hora atual, você pode utilizar a função NOW que retornará além da data, também o horário (2020-01-01 15:00)
+
+select curdate(), now();
+
+
+Extração de Parte de uma Data (EXTRACT())
+
+Este comando é utilizado para extrair uma parte de determinada data. Por exemplo:
+
+Para extrair somente o ano da data atual:
+select extract(year from curdate());
+
+Para extrair somente o mês da data atual:
+select month(curdate());
+
+Para extrair somente o dia da data atual:
+select day(curdate());
+
+Também existe uma forma resumida para obter estas informações, bastando informar a parte desejada (year, month, day):
+select year(curdate());
+select month(curdate());
+select day(curdate());
+
+Adicionar Tempo à uma Data (DATEADD())
+select datediff(curdate(),'2020-07-28');
+
+select date_add(curdate(), interval 5 month);
+
+select date_add(curdate(), interval -5 month);
+
+
+
+Diferença Entre Datas
+
+DATEDIFF()
+PERIOD_DIFF
+select period_diff('202007','202001');
+
+
+
+Número do Dia Baseado no Ano(DAYOFYEAR())
+select dayofyear('2020-02-01');
+
+Nome do Mês (MONTHNAME())
+
+
+select monthname(curdate());
+
+select
+    case month(curdate())
+ when 1 then 'Janeiro'
+        when 2 then 'Fevereiro'
+        when 3 then 'Março'
+        when 4 then 'Abril'
+        when 5 then 'Maio'
+        when 6 then 'Junho'
+        when 7 then 'Julho'
+        when 8 then 'Agosto'
+        when 9 then 'Setembro'
+        when 10 then 'Outubro'
+        when 11 then 'Novembro'
+        when 12 then 'Dezembro'
+    end;
+
+
+Número do Dia da Semana (WEEKDAY())
+ select weekday(curdate());
+
+Nome do Dia da Semana (DAYNAME)
+select dayname(curdate());
+
+/*tratar o dia da semana com CASE*/
+
+ select 
+    case
+ when weekday(curdate()) = 0 then 'Segunda-Feira'
+        when weekday(curdate()) = 1 then 'Terça-Feira'
+        when weekday(curdate()) = 2 then 'Quarta-Feira'
+        when weekday(curdate()) = 3 then 'Quinta-Feira'
+        when weekday(curdate()) = 4 then 'Sexta-Feira'
+        when weekday(curdate()) = 5 then 'Sabado'
+        when weekday(curdate()) = 6 then 'Domingo'
+    end;
+
+
+Formatação (DATE_FORMAT)
+
+
+Esta função é utilizada para manipular o idioma ou partes de uma data. Por exemplo se em seu banco de dados o idioma da data esta no padrão americano, ano-mês-dia (2020-07-15) você pode alterar a forma de apresentação da data para nosso padrão, que é dia/mês/ano, com o comando:
+SELECT DATE_FORMAT(CURDATE(), '%d/%m/%Y').
+
+O DATE_FORMAT pode te apresentar diversas formatações, baseadas nos caracteres abaixo:
+%a     Nome da Semana Abreviado (Seg a Dom)
+%b     Nome do mês Abreviado (Jan a Dez)
+%c     Mês de forma numérica (1 a 12)
+%D     Dia do mês com o sufixo Inglês (1st, 2nd, 3rd, …)
+%d     Dia do Mês de forma numérica (01 a 31)
+%e     Dia do Mês de forma numérica (1 a 31)
+%f     Micro segundos (000000..999999)
+%H     Horas (00 a 23)
+%h     Horas (01 a 12)
+%I     Horas (01 a 12)
+%i     Minutos de forma numérica (00 a 59)
+%j     Dia do Ano (001 a 366)
+%k     Horas (0 a 23)
+%l     Horas (1 a 12)
+%M     Nome do mês (Janeiro a Dezembro)
+%m     Mês de forma numérica (01 a 12)
+%p     AM ou PM
+%r     Horas, 12-horas (hh:mm:ss seguidos de AM ou PM)
+%S     Segundos (00 a 59)
+%s     Segundos (00 a 59)
+%T     Horas, 24-horas (hh:mm:ss)
+%U     Semana (00 a 53), onde Domingo é o primeiro dia da semana
+%u     Semana (00 a 53), onde Segunda é o primeiro dia da semana
+%V     Semana (00 a 53), onde Domingo é o primeiro dia da semana; usado com %X
+%v     Semana (00 a 53), onde Segunda é o primeiro dia da semana; usado com %x
+%W     Nome do dia da semana (Segunda a Domingo)
+%w     Dia da semana (0=Domingo a 6=Sábado)
+%X     Dia da semana onde Domingo é o primeiro dia da semana, de forma numérica com 4 dígitos, usado com %V
+%x     Ano da semana, onde Segunda é o primeiro dia da semana, de forma numérica, com 4 dígitos, usado com %v
+%Y     Ano numérico com 4 dígitos
+%y     Ano numérico com 2 dígitos
+%%     Um simples caracter “%”
+%x     x, para qualquer “x” não listado acima

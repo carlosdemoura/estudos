@@ -1,0 +1,124 @@
+
+
+use primeirobanco;
+
+/*Limpa tabela de clientes*/
+
+
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `NOME` varchar(120) NOT NULL,
+  `DTNASC` date NOT NULL,
+  `RUA` varchar(120) NOT NULL,
+  `NUMERO` int(11) DEFAULT NULL,
+  `COMPLEMENTO` varchar(120) DEFAULT NULL,
+  `BAIRRO` varchar(80) NOT NULL,
+  `CEP` int(11) DEFAULT NULL,
+  `CIDADES_ID` int(11) NOT NULL,
+  `ESTADOS_ID` int(11) NOT NULL,
+  `MARGEMVENDA` decimal(15,2) DEFAULT NULL,
+  `CPF` bigint(20) NOT NULL,
+  PRIMARY KEY (`ID`,`CIDADES_ID`,`ESTADOS_ID`),
+  UNIQUE KEY `ID_UNIQUE` (`ID`),
+  KEY `fk_clientes_CIDADES_idx` (`CIDADES_ID`),
+  KEY `fk_clientes_ESTADOS1_idx` (`ESTADOS_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8;
+
+delete from cidades;
+
+delete from estados;
+
+/*Carga de Estados*/
+
+insert into estados(nome)
+values
+	('Acre'),
+	('Alagoas'),
+	('Amapá'),
+	('Amazonas'),
+	('Bahia'),
+	('Ceará'),
+	('Espírito Santo'),
+	('Goiás'),
+	('Maranhão'),
+	('Mato Grosso'),
+	('Mato Grosso do Sul'),
+	('Minas Gerais'),
+	('Pará'),
+	('Paraíba'),
+	('Paraná'),
+	('Pernambuco'),
+	('Piauí'),
+	('Rio de Janeiro'),
+	('Rio Grande do Norte'),
+	('Rio Grande do Sul'),
+	('Rondônia'),
+	('Roraima'),
+	('Santa Catarina'),
+	('São Paulo'),
+	('Sergipe'),
+	('Tocantins'),
+	('Distrito Federal') ;
+
+/*Carga de Cidades*/
+
+INSERT INTO `cidades` (`ID`, `NOME`, `ESTADOS_ID`) VALUES
+(2, 'Belo Horizonte', 2),
+(3, 'Ibirite', 2),
+(4, 'Contagem', 2),
+(5, 'Betim', 2),
+(6, 'Nova Lima', 2),
+(15, 'Sarzedo', 2),
+(16, 'Brumadinho', 2),
+(17, 'Divinopolis', 2),
+(18, 'Igarape', 2),
+(19, 'Sete Lagoas', 2),
+(20, 'Santa Luzia', 2),
+(21, 'Governador Valadares', 2),
+(22, 'Amazonas', 2),
+(23, 'Rio de Janeiro', 19);
+
+-- Extraindo dados da tabela `clientes`
+
+INSERT INTO `clientes` (`ID`, `NOME`, `DTNASC`, `RUA`, `NUMERO`, `COMPLEMENTO`, `BAIRRO`, `CEP`, `CIDADES_ID`, `ESTADOS_ID`, `MARGEMVENDA`, `CPF`) VALUES
+(3, 'Princesa Izabel', '1992-02-27', 'Av. Getulio Vargas', 310, NULL, 'Centro', 32000000, 2, 2, NULL, 12345678998),
+(153, 'Nicolau Copérnico', '1973-05-21', 'Avenida Abílio Machado', 54, 'sala 101', 'Centro', NULL, 2, 2, NULL, 12365485295),
+(154, 'Galileu Galilei', '1964-06-12', 'Avenida Afonso Pena', 4005, NULL, 'Cruzeiro', NULL, 2, 2, NULL, 78541258955),
+(155, 'Johannes Kepler', '1971-06-28', 'Avenida Afonso XII', 58798, 'ap 15', 'Betania', NULL, 2, 2, NULL, 12254785445),
+(156, 'Isaac Newton', '1942-12-27', 'Avenida Professor Alfredo Balena', 16514, NULL, 'Cachoeirinha', NULL, 2, 2, NULL, 12654748975),
+(157, 'Antoine Laurent Lavoisier', '1943-02-26', 'Avenida Álvares Cabral', 489, NULL, 'Gutierrez', NULL, 2, 2, NULL, 41515498845),
+(158, 'Michael Faraday', '1991-05-30', 'Avenida Amazonas', 49, NULL, 'Barroca', NULL, 2, 2, NULL, 16487765421),
+(159, 'Charles Darwin', '1909-11-20', 'Avenida Sete', 1361, NULL, 'Centro', NULL, 6, 2, NULL, 87542168745),
+(160, 'Louis Pasteur', '1922-12-15', 'Avenida Antônio Abrahão Caram', NULL, NULL, 'Cruzeiro', NULL, 2, 2, NULL, 85214796545),
+(161, 'James Clerk Maxwell', '1931-03-13', 'Avenida Presidente Antônio Carlos', NULL, 'ap 1001', 'Betania', NULL, 2, 2, NULL, 12687845125),
+(162, 'Nikola Tesla', '1956-02-26', 'Avenida Assis Chateaubriand', 234, NULL, 'Cachoeirinha', NULL, 2, 2, NULL, 46879514549),
+(163, 'Albert Einstein', '1979-03-13', 'Avenida Augusto de Lima', 85, NULL, 'Gutierrez', NULL, 2, 2, NULL, 85487921453),
+(164, 'Niels Bohr', '1985-12-27', 'Avenida Carandaí', 65, NULL, 'Barroca', NULL, 2, 2, NULL, 1254874854),
+(165, 'César Lattes', '1924-12-15', 'Avenida Cristóvão Colombo', NULL, NULL, 'Centro', NULL, 2, 2, NULL, 5149811048),
+(166, 'Oswaldo Cruz', '1972-12-15', 'Rua Seis', NULL, NULL, 'Centro', NULL, 3, 2, NULL, 12054980498),
+(167, 'Carlos Chagas', '1979-02-26', 'Avenida Portugal', 567, 'ap 802', 'Betania', NULL, 2, 2, NULL, 10649874980),
+(168, 'Adolfo Lutz', '1955-06-28', 'Avenida Prudente de Morais', 35467, NULL, 'Cachoeirinha', NULL, 2, 2, NULL, 6587409898),
+(169, 'Vital Brazil', '1965-03-13', 'Avenida Waldir Soeiro Emrich', NULL, NULL, 'Gutierrez', NULL, 2, 2, NULL, 9840409488),
+(170, 'Bartolomeu de Gusmão', '1985-05-21', 'Avenida Fleming', NULL, NULL, 'Barroca', NULL, 2, 2, NULL, 8790848944),
+(171, 'Duilia de Mello', '1963-05-21', 'Avenida Francisco Deslandes', NULL, 'sala 15', 'Centro', NULL, 2, 2, NULL, 1000988796),
+(172, 'José Leite Lopes', '1918-02-26', 'Avenida José Faria da Rocha', 354, NULL, 'Eldorado', NULL, 4, 2, NULL, 8049870870),
+(173, 'Carlos Paz de Araújo', '1952-06-28', 'Avenida Professor Alfredo Balena', 5486, NULL, 'Betania', NULL, 2, 2, NULL, 9870978449),
+(174, 'Marcelo Gleiser', '1959-12-27', 'Avenida Álvares Cabral', NULL, NULL, 'Cachoeirinha', NULL, 2, 2, NULL, 49840987),
+(175, 'Suzana Herculano-Houzel', '1972-03-13', 'Rua Paris', 867, NULL, 'Eldorado', NULL, 4, 2, NULL, 789409048);
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `clientes`
+--
+ALTER TABLE `clientes`
+  ADD CONSTRAINT `fk_clientes_CIDADES` FOREIGN KEY (`CIDADES_ID`) REFERENCES `cidades` (`ID`),
+  ADD CONSTRAINT `fk_clientes_ESTADOS1` FOREIGN KEY (`ESTADOS_ID`) REFERENCES `estados` (`ID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

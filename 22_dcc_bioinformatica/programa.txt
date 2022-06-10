@@ -1,0 +1,13 @@
+Programa
+Objetivos
+
+O curso proposto tem como objetivo a introdução de lógica de programação, o ensino da linguagem da programação Python, a introdução às técnicas de análise de complexidade de algoritmos e a apresentação de algoritmos clássicos da bioinformática para estudantes que desejem ingressar na área de Bioinformática e que sejam provenientes principalmente de áreas afins das ciências biológicas.
+Período
+
+O curso será no período de 01/05/2022 a 30/06/2022.
+Certificado
+
+Haverá certificado de participação. Acompanharemos o andamento dos alunos verificando se estão assistindo as aulas. A entrega de todos os desafios não é um requisito indispensável para a obtenção do certificado mas, é desejável para alcançar o aprendizado almejado.
+Conteúdo
+
+O conteúdo desse curso é parte do programa que um estudante de ciência da computação e cursos afins aprendem em seu ciclo básico em disciplinas de algoritmos e estruturas de dados e análise de algoritmos. São 4 módulos que iniciam introduzindo conceitos e definições básicos, introduzem e exercitam a lógica de programação através do ensino e prática de programação na linguagem de programação Python, bastante utilizada em bioinformática, se aprofundam com a apresentação de técnicas de análise da complexidade de algoritmos ilustradas com inúmeros exemplos práticos e culminam com a apresentação de algoritmos clássicos em bioinformática, particularmente, algoritmos para alinhamento de sequências biológicas.

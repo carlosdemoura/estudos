@@ -1,0 +1,20 @@
+Estou tendo problemas para exportar dados no MySQL. Baixei a versão mais recente, mas aparece a seguinte mensagem no workbench:
+
+Na janela "object selection"
+mysqldump.exe is version 8.0.28, but the MySQL Server to be dumped has version 10.4.24. Because the version of mysqldump is no the same as the server, some features may not be backed up properly. It is recommended you upgrade your local MySQL client programs, including mysqldump to a version equal to or newer than that of the target server. The path to the dump tool must then be set in Preferences -> Administrator -> Path to mysqldump Tool:
+Então aparecem as opções Continue Anyway e Cancelar
+
+Na janela "export progress" aparece:
+09:26:21 Dumping cadastro (gafanhotos)
+Running: mysqldump.exe --defaults-file="C:\Users\Carlos\AppData\Local\Temp\tmpjzwzs9v3.cnf"  --host=127.0.0.1 --port=3306 --default-character-set=utf8 --user=root --protocol=tcp --skip-triggers "cadastro" "gafanhotos"
+mysqldump: Couldn't execute 'SELECT COLUMN_NAME,                       JSON_EXTRACT(HISTOGRAM, '$."number-of-buckets-specified"')                FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME = 'cadastro' AND TABLE_NAME = 'gafanhotos';': Unknown table 'column_statistics' in information_schema (1109)
+
+Operation failed with exitcode 2
+09:26:21 Export of C:\Users\Carlos\OneDrive\Documentos\Dump20220331 has finished with 1 errors
+
+
+
+Também não consigo exportar pelo phpMyAdmin, aparece "Falha - Erro na rede".
+
+
+Além disso, o link da aula 11 (para acessar o dump que é usado na aula) não funciona.
