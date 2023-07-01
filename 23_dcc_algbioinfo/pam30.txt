@@ -1,5 +1,4 @@
-#Entries for the PAM30 matrix at a scale of ln(2)/2.0.
-#fonte: https://www.ncbi.nlm.nih.gov/IEB/ToolBox/C_DOC/lxr/source/data/PAM30
+#Entries for the PAM30 matrix at a scale of ln(2)/2.0. From:  https://www.ncbi.nlm.nih.gov/IEB/ToolBox/C_DOC/lxr/source/data/PAM30
 "    A   R   N   D   C   Q   E   G   H   I   L   K   M   F   P   S   T   W   Y   V   B   J   Z   X   *",
 "A   6  -7  -4  -3  -6  -4  -2  -2  -7  -5  -6  -7  -5  -8  -2   0  -1 -13  -8  -2  -3  -6  -3  -1 -17",
 "R  -7   8  -6 -10  -8  -2  -9  -9  -2  -5  -8   0  -4  -9  -4  -3  -6  -2 -10  -8  -7  -7  -4  -1 -17",

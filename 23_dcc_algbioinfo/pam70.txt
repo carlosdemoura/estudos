@@ -1,5 +1,4 @@
-#Entries for the PAM70 matrix at a scale of ln(2)/2.0.
-#fonte: https://www.ncbi.nlm.nih.gov/IEB/ToolBox/C_DOC/lxr/source/data/PAM70
+#Entries for the PAM70 matrix at a scale of ln(2)/2.0. From: https://www.ncbi.nlm.nih.gov/IEB/ToolBox/C_DOC/lxr/source/data/PAM70
 "    A   R   N   D   C   Q   E   G   H   I   L   K   M   F   P   S   T   W   Y   V   B   J   Z   X   *",
 "A   5  -4  -2  -1  -4  -2  -1   0  -4  -2  -4  -4  -3  -6   0   1   1  -9  -5  -1  -1  -3  -1  -1 -11",
 "R  -4   8  -3  -6  -5   0  -5  -6   0  -3  -6   2  -2  -7  -2  -1  -4   0  -7  -5  -4  -5  -2  -1 -11",
